@@ -1,2 +1,85 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<html>
+  <head>
+    <title>Happy Kid</title>
+    <meta name="description" content="Happy Kid helps you and your kid to grow up correcting bad habits into good ones!">
+    <meta charset="utf-8">
+    <meta property="og:title" content="Happy Kid - Rewards your kid's progresses!">
+    <meta property="og:image" content="happykid.jpeg">
+    <meta property="og:description" content="Happy Kid helps you and your kid to grow up correcting bad habits into good ones!">
+    <meta property="og:site_name" content="Happy Kid">
+  </head>
+  <body>
+    <div class='bg'></div>
+    <div class="jumbotron paral paralsec">
+
+      <div class="container">
+        <div class="row no-gutters slider-text justify-content-center align-items-center">
+          <div class="col-lg-8 col-md-6 d-flex justify-content-center align-items-end">
+            <div class="text text-center">
+              <h1 class="main-title">Hello! I am Happy Kid</h1>
+              <p style="font-size: 18px;">I reward your kid turning bad habits into good ones.</p>
+                <div>
+                  <%=link_to "LET'S GO!", root_path, class: "btn btn-secondary" %>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay">
+    <a href="#apply">
+      <div class="arrow">
+        <i class="fas fa-long-arrow-alt-down"></i>
+      </div>
+      </a>
+    </div>
+
+    <section class="content-section" id="apply">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <span class="sub-title">Happy Kid</span>
+            <h2 class="section-heading text-uppercase">The simplest way to reward your kid</h2>
+            <h3 class="section-subheading text-muted">We help your kid in a playful way, track his progress on your dashboard!</h3>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-3">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-search-location fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">1. Select</h4>
+            <p class="text-muted">Select the areas you feel your kid needs help with. </p>
+          </div>
+          <div class="col-md-3">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-file-alt fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">2. Set</h4>
+            <p class="text-muted">Set daily and monthly targets according to your kid's needs.</p>
+          </div>
+          <div class="col-md-3">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-baby fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">3. Track</h4>
+            <p class="text-muted">Track his behaviours and match the targets.</p>
+          </div>
+            <div class="col-md-3">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-child fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">4. Get rewards</h4>
+            <p class="text-muted">Congratulations! You met your targets, spin the wheel and get the rewards you deserve! </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    to do <%= render 'shared/footer' %>
+  </body>
+</html>

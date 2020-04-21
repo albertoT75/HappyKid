@@ -1,0 +1,45 @@
+.table-dashboard {
+  padding: 0 !important;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid #ddd;
+
+  .table-item {
+    display: block;
+    padding: 8px;
+    height: 50px;
+    margin-bottom: 0;
+  }
+
+  .table-item:not(:last-of-type) {
+    border-bottom: 1px solid #ddd;
+  }
+
+  i {
+    font-style: normal;
+  }
+  .accepted {
+    color: green;
+  }
+
+  .pending {
+    color: blue;
+  }
+
+  .declined {
+    color: red;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 145px;
+  }
+}
+
+.dashboard-table {
+  tr .table-dashboard:first-of-type {
+    vertical-align: top;
+    line-height: 50px;
+    color: black;
+  }
+}
