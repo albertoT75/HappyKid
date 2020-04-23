@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_23_100509) do
+ActiveRecord::Schema.define(version: 2020_04_23_101746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.string "sleeping"
+    t.string "pottytraining"
+    t.string "eating"
+    t.string "dressingup"
+    t.string "homework"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "kids", force: :cascade do |t|
     t.string "first_name"
@@ -21,6 +32,15 @@ ActiveRecord::Schema.define(version: 2020_04_23_100509) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_kids_on_user_id"
+  end
+
+  create_table "rewards", force: :cascade do |t|
+    t.string "prize"
+    t.integer "stars"
+    t.bigint "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_rewards_on_game_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,4 +56,5 @@ ActiveRecord::Schema.define(version: 2020_04_23_100509) do
   end
 
   add_foreign_key "kids", "users"
+  add_foreign_key "rewards", "games"
 end
