@@ -19,20 +19,20 @@
 
   <div class="container dashboard-section" id="my-kids">
     <div class="section-title" style=" margin-top: 15px; color: #f57170;">
-      <h4>My games</h4>
+      <h4>My Kids</h4>
     </div>
     <div class="row kid-сards">
-      <% current_user.games.each do |game| %>
+      <% current_user.kids.each do |game| %>
         <div class="col-3 kid-card">
-          <%= link_to edit_game_path(game) do %>
-            <span><%= game.kidname %></span>
+          <%= link_to edit_kid_path(game) do %>
+            <span><%= kid.first_name %></span>
           <% end %>
         </div>
       <% end %>
 
       <div class="col-3 kid-card kid-card-add">
-        <%= link_to new_game_path(current_user) do %>
-          <span>Add game <i class="far fa-plus-square"></i></span>
+        <%= link_to new_kid_path(current_user) do %>
+          <span>Add kid <i class="far fa-plus-square"></i></span>
         <% end %>
       </div>
     </div>
