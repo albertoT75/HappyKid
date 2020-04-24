@@ -22,9 +22,9 @@
       <h4>My Kids</h4>
     </div>
     <div class="row kid-сards">
-      <% current_user.kids.each do |game| %>
+      <% current_user.kids.each do |kid| %>
         <div class="col-3 kid-card">
-          <%= link_to edit_kid_path(game) do %>
+          <%= link_to edit_kid_path(kid) do %>
             <span><%= kid.first_name %></span>
           <% end %>
         </div>
