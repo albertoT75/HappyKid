@@ -1,0 +1,162 @@
+<html>
+  <head>
+    <title>Happy Kid</title>
+    <meta name="description" content="Happy Kid helps you and your kid to grow up correcting bad habits into good ones!">
+    <meta charset="utf-8">
+    <meta property="og:title" content="Happy Kid - Rewards your kid's progresses!">
+    <meta property="og:image" content="happykid.jpeg">
+    <meta property="og:description" content="Happy Kid helps you and your kid to grow up correcting bad habits into good ones!">
+    <meta property="og:site_name" content="Happy Kid">
+  </head>
+  <body>
+    <%=link_to "Back to results", session[:search_results], class:"btn btn-link", style: "position: absolute; top: 30px; left: 30px; font-size: 14px;" %>
+    <div class="d-flex kita-show-all" >
+      <div class="kita-show-info w-50">
+        <div class="d-flex" style=" color: #f57170;">
+          <h4>GAME</h4>
+          <hr class="kindergardens-line">
+        </div>
+        <div class="">
+          <div style="width: 100%; padding-right: 10px;">
+            <h1>
+              <%= @game.name.upcase %>
+              <% if @favourite.nil? %>
+                <div>
+                  <strong><%= link_to '<i class="fas fa-heart"></i>'.html_safe, game_favourites_path(@game),
+                    method: :post,
+                    data: {confirm: 'Adding to favourites' } %></strong>
+                </div>
+              <% end %>
+            </h1>
+
+            <div class="d-flex justify-content-start kita-info">
+
+              <div class="d-flex flex-column kita-info-details">
+
+              </div>
+            </div>
+            <p><%= @game.description %></p>
+            <div class="d-flex justify-content-start kita-contact">
+
+            </div>
+          </div>
+          <!-- <div id="map" style="width: 40%"
+            data-markers="<#%= @markers.to_json %#>"
+            data-mapbox-api-key="<#%= ENV['MAPBOX_API_KEY'] %#>">
+          </div> -->
+        </div>
+            <hr>
+            <%= render "shared/game_details", game: @game %>
+            <hr>
+            <!-- <#%= render "shared/kita_reviews", kindergarden: @kindergarden %#> -->
+            <%= render "shared/carousel", game: @game %>
+       </div>
+       <div class="kita-show-form w-50">
+         <div class="d-flex" style=" color: #f57170;">
+          <h4>SELECT</h4>
+          <hr class="kindergardens-line">
+        </div>
+        <div>
+         <% if user_signed_in? && @game.is_available %>
+          <% if current_user.kids.exists? && !@kids_with_no_reservation.empty? %>
+          <p style="margin: 20px 0 0;">Please select one of your kids and we'll guide you through the selection process for this area</p>
+           <div class="form-pink-bg">
+            <%= simple_form_for([@game, @reservation]) do |f| %>
+            <%= f.association :kid, collection: @kids_with_no_reservation, label_method: :first_name %>
+            <%= f.button :submit, class:"btn btn-white w-100" %>
+          <% end %>
+          </div>
+          <% elsif @current_user.kids.empty? %>
+          <div class="form-pink-bg">
+          <%= simple_form_for(@kid) do |f| %>
+            <%= f.error_notification %>
+            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+             <% if @kid.errors.any? %>
+               <div class="errors-container">
+                 <ul>
+                   <% @kid.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                   <% end %>
+                 </ul>
+               </div>
+              <% end %>
+              <div class="form-inputs">
+               <%= f.input :first_name %>
+           <%= f.input :hair_color, as: :radio_buttons,
+                        collection: ['Bold', 'Black', 'Brown', 'Blonde', 'Red'] %>
+           <%= f.input :haircut, as: :radio_buttons,
+                        collection: ['Buzzcut', 'Short', 'Parted', 'ShavedSides', 'Curly', 'Medium', 'Long', 'Pony Tail', 'Pony Tails'] %>
+           <%= f.input :eyes_color, as: :radio_buttons,
+                        collection: ['Black', 'Brown', 'Gray', 'Blue', 'Green'] %>
+           <%= f.input :glasses %>
+           <%= f.input :up_color, as: :radio_buttons,
+                        collection: ['White', 'Red', 'Green', 'Blue', 'Yellow', 'Black', 'Gray', 'Brown', 'Pink', 'Light Blue', 'Black', 'Purple', 'Orange'] %>
+           <%= f.input :bottom_color, as: :radio_buttons,
+                        collection: ['White', 'Red', 'Green', 'Blue', 'Yellow', 'Black', 'Gray', 'Brown', 'Pink', 'Light Blue', 'Black', 'Purple', 'Orange'] %>
+
+              </div>
+               <div class="form-actions">
+                 <%= f.submit 'SELECT', class:"btn btn-white w-100 font-weight-bold" %>
+               </div>
+              <% end %>
+            </div>
+          <% end %>
+          <% if @kids_with_no_reservation.empty? && user_signed_in? && current_user.kids.exists? %>
+              <h4 style="margin: 30px 0 16px; font-size: 18px; color: #f57170;">All of your kids have already selected this area.</h4>
+          <% end %>
+         <% end %>
+        </div>
+        <div>
+          <% if !user_signed_in? %>
+            <h4 style="margin: 30px 0 16px; font-size: 18px; color: #f57170;"><i class="fas fa-info-circle" style="margin-right: 8px; color: #f57170;"></i>You need to sign up before you can select.</h4>
+          <% end %>
+          <ul class="list-group" style="margin: 30px 0 16px;">
+           <% @game.reviews.each do |review| %>
+             <li class="list-group-item d-flex justify-content-between flex-column">
+               <div class="review-user">
+                 <span class="badge badge-primary badge-pill">
+                   <% counter = 0 %>
+                   <% 5.times do %>
+                    <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                    <% counter += 1 %>
+                   <% end %>
+                 </span>
+                <i><%= review.reservation.kid.user.username if review.reservation.kid.user.username.present? %></i>
+               </div>
+               <%= review.content %>
+             </li>
+            <% end %>
+          </ul>
+        <% if user_signed_in? %>
+          <% if @my_reservation.empty? && @game.is_available %>
+            <h4 style="font-size: 16px"><i class="fas fa-info-circle" style="margin-right: 8px; color: #f57170;"></i>You will be able to leave a comment once you selected the area.</h4>
+          <% end %>
+          <% if @game.reviews.empty? && !@my_reservation.empty? %>
+            <h4 style="font-size: 16px"><i class="fas fa-info-circle" style="margin-right: 8px; color: #f57170;"></i>Leave your first comment.</h4>
+          <% end %>
+          <% unless @game.is_available %>
+            <h4 style="margin: 30px 0 16px; font-size: 16px"><i class="fas fa-info-circle" style="margin-right: 8px; color: #f57170;"></i>You already selected this area.</h4>
+          <% end %>
+
+            <% if @my_reservation.present? %>
+                <div class="d-flex" style="margin-top: 30px; color: #f57170;">
+                  <h4>REVIEW</h4>
+                  <hr class="kindergardens-line">
+                </div>
+                <div class="form-pink-bg">
+                <%= simple_form_for [@my_reservation.first, @review] do |f| %>
+                 <%= f.input :rating, collection: 1..5 %>
+                 <%= f.input :content %>
+                 <%= f.submit class:"btn btn-white w-100"%>
+               <% end %>
+               </div>
+            <% end %>
+          <% end %>
+        </div>
+     </div>
+    </div>
+
+    <%= render "shared/footer", game: @game %>
+  </body>
+</html>
+
