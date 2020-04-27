@@ -11,14 +11,14 @@
 
             <div class="d-flex filters">
               <div class="filter-input-field">
-                <%= label_tag 'opening_hours', 'Opening Hours' %>
+                <%= label_tag 'sleeping', 'Sleeping' %>
                 <br>
-                <%= select_tag "opening_hours", options_for_select([['06:00', '06:00'], ['07:00', '07:00'], ['08:00', '08:00'], ['09:00', '09:00'], ['10:00', '10:00']]), include_blank: true, placeholder: '', class: "advanced_search" %>
+                <%= select_tag "sleeping", options_for_select([['With Mom&Dad', 'With Mom&Dad'], ['Falling Asleep Alone', 'Falling Asleep Alone'], ['Wondering At Night', 'Wondering At Night']), include_blank: true, placeholder: '', class: "advanced_search" %>
               </div>
               <div  class="filter-input-field">
-                <%= label_tag 'closing_hours', 'Closing Hours' %>
+                <%= label_tag 'potty_training', 'Potty Training' %>
                 <br>
-                <%= select_tag "closing_hours", options_for_select([['16:00', '16:00'], ['17:00', '17:00'], ['18:00', '18:00'], ['19:00', '19:00'], ['20:00', '20:00']]), include_blank: true, placeholder: '', class: "advanced_search" %>
+                <%= select_tag "potty_training", options_for_select([['16:00', '16:00'], ['17:00', '17:00'], ['18:00', '18:00'], ['19:00', '19:00'], ['20:00', '20:00']]), include_blank: true, placeholder: '', class: "advanced_search" %>
               </div>
               <div  class="filter-input-field">
                 <%= label_tag 'size', 'Size' %>
