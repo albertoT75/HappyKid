@@ -1,11 +1,11 @@
-<%= form_tag kindergardens_path, method: :get, class: "search-location mt-md-5" do %>
+<%= form_tag games_path, method: :get, class: "search-location mt-md-5" do %>
 
       <div class="form-group">
         <div class="form-field">
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Search by name, language or location",
+            placeholder: "Search by name of area of behaviour",
             autocomplete: "off"
             %>
 

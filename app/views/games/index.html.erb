@@ -1,0 +1,40 @@
+<html>
+  <head>
+   <title>Happy Kid</title>
+    <meta name="description" content="Happy Kid helps you and your kid to grow up correcting bad habits into good ones!">
+    <meta charset="utf-8">
+    <meta property="og:title" content="Happy Kid - Rewards your kid's progresses!">
+    <meta property="og:image" content="happykid.jpeg">
+    <meta property="og:description" content="Happy Kid helps you and your kid to grow up correcting bad habits into good ones!">
+    <meta property="og:site_name" content="Happy Kid">
+  </head>
+   <body>
+    <div id="wrapper" style=" color: #f57170;">
+      <div class="kita-index-flex-left">
+        <div class="d-flex" style=" color: #f57170;">
+          <h4>SEARCH</h4>
+          <hr class="kindergardens-line">
+        </div>
+          <div class="index-search">
+            <%= render 'pages/advancedsearch' %>
+          </div>
+           <div class="d-flex search-results-title" style=" color: #f57170;">
+            <h4>AREAS OF <abbr>BEHAVIOUR</abbr></h4>
+            <hr class="kindergardens-line">
+          </div>
+
+        <div>
+            <div class="grid-container" >
+              <% @games.each do |game| %>
+                <%= render "shared/kita_card", game: game %>
+              <% end %>
+            </div>
+        </div>
+      </div>
+      <div class="kita-index-flex-right"></div>
+    </div>
+    <%= render "shared/footer", game: @game %>
+  </body>
+</html>
+
+
