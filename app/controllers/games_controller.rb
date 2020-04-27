@@ -39,7 +39,7 @@ class GamesController < ApplicationController
     #   @review = Review.new
     #   @kids_with_no_reservation = current_user.kids.reject { |kid| Reservation.exists?(kid_id: kid.id, kindergarden_id: @kindergarden.id) }
     #   # @reservation = Reservation.where(kid_id: current_user.kids. ?, kindergarden_id: @kindergarden.id)
-    # end
+    end
     @kid = Kid.new
     # @reservation = Reservation.new
 

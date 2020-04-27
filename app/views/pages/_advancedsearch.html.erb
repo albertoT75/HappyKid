@@ -5,14 +5,14 @@
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Search by name of area",
+            placeholder: "Search by name of area of behaviour",
             autocomplete: "off"
             %>
               <div class="d-flex filters">
               <div class="filter-input-field">
                 <%= label_tag 'name', 'Sleeping' %>
                 <br>
-                <%= select_tag "name", options_for_select([['Sleeping - With mom and dad', 'With mom and dad'], ['Sleeping - Falling asleep alone', 'Falling asleep alone'], ['Sleeping - Wondering at night', 'Wondering at night']), include_blank: true, placeholder: '', class: "advanced_search" %>
+                <%= select_tag "name", options_for_select([['Sleeping - With mom and dad', 'With mom and dad'], ['Sleeping - Falling asleep alone', 'Falling asleep alone'], ['Sleeping - Wondering at night', 'Wondering at night']]), include_blank: true, placeholder: '', class: "advanced_search" %>
               </div>
               <div  class="filter-input-field">
                 <%= label_tag 'name', 'Potty Training' %>
@@ -22,12 +22,12 @@
               <div  class="filter-input-field">
                 <%= label_tag 'name', 'Eating' %>
                 <br>
-                <%= select_tag "name", options_for_select([['Eating - Eating Alone', 'Eating Alone'], ['Eating - Eating At The Table', 'Staying at the table'],]), include_blank: true, placeholder: '', class: "advanced_search" %>
+                <%= select_tag "name", options_for_select([['Eating - Eating Alone', 'Eating Alone'], ['Eating - Eating At The Table', 'Staying at the table']]), include_blank: true, placeholder: '', class: "advanced_search" %>
               </div>
               <div  class="filter-input-field">
                 <%= label_tag 'name', 'Dressing Up' %>
                 <br>
-                <%= select_tag "name", options_for_select([['Dressing Up - Choosing Clothes', 'Choosing Clothes'], ['Dressing Up - Wearing Clothes', 'Wearing Clothes Alone'],]), include_blank: true, placeholder: '', class: "advanced_search" %>
+                <%= select_tag "name", options_for_select([['Dressing Up - Choosing Clothes', 'Choosing Clothes'], ['Dressing Up - Wearing Clothes', 'Wearing Clothes Alone']]), include_blank: true, placeholder: '', class: "advanced_search" %>
               </div>
               <div  class="filter-input-field">
                 <%= label_tag 'name', 'Home work' %>

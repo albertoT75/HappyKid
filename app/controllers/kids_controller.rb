@@ -8,7 +8,7 @@ class KidsController < ApplicationController
 
   def create
     @kid = current_user.kids.new(kid_params)
-    # authorize @kid
+    authorize @kid
     if @kid.save
       flash[:notice] = 'A new kid has been added to your profile.'
       redirect_to dashboard_path(current_user)
