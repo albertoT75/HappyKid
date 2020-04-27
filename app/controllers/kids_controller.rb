@@ -3,7 +3,7 @@ class KidsController < ApplicationController
 
   def new
     @kid = current_user.kids.new
-    # authorize @kid
+    authorize @kid
   end
 
   def create
@@ -19,11 +19,11 @@ class KidsController < ApplicationController
   end
 
   def edit
-    # authorize @kid
+    authorize @kid
   end
 
   def update
-    # authorize @kid
+    authorize @kid
     if @kid.update(kid_params)
       flash[:success] = "Your kid's details has been successfully updated!"
       redirect_to dashboard_path(current_user)

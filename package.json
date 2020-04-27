@@ -2,10 +2,15 @@
   "name": "HappyKid",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "5.1.1",
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.5.0",
-    "popper.js": "^1.16.1"
+    "@rails/webpacker": "^4.2.0",
+    "bootstrap": "^4.3.1",
+    "choices.js": "^9.0.1",
+    "flatpickr": "^4.6.3",
+    "install": "^0.13.0",
+    "jquery": "^3.4.1",
+    "mapbox-gl": "^1.5.1",
+    "popper.js": "^1.16.0",
+    "select2": "^4.0.12"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
