@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_100820) do
+ActiveRecord::Schema.define(version: 2020_04_24_103012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 2020_04_24_100820) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "first_name"
+    t.string "hair_color"
+    t.string "haircut"
+    t.string "eyes_color"
+    t.boolean "glasses"
+    t.string "up_color"
+    t.string "bottom_color"
     t.index ["user_id"], name: "index_kids_on_user_id"
   end
 
