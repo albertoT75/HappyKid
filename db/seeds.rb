@@ -3,6 +3,7 @@ puts "Destroy previous Areas"
 # Reservation.destroy_all
 Game.destroy_all
 
-games = Game.create([{name: "Sleeping", description: "Help your children to find a balanced sleep, by staying in his bed during the night", areas: "Going to Mon&Dad's bed at night"},
-                      {name: "Sleeping", description: "Help your children to find a balanced sleep, by staying in his bed during the night", areas: "Falling asleep alone"},
-                       {name: "Sleeping", description: "Help your children to find a balanced sleep, by staying in his bed during the night", areas: "Wondering at night"} ])
+games = Game.create([{name: "Sleeping - With mom and dad", description: "Help your children to find a balanced sleep, by staying in his bed during the night."},
+                      {name: "Sleeping - Falling asleep alone", description: "Develop routines to make your children fall asleep alone."},
+                      {name: "Sleeping - Wondering at night", description: "Prevent your children from getting up when shortly awake."),
+                      {name: "Potty Training", description: "Let's keep track of the bed-accidents!"}])
