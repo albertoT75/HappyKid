@@ -19,7 +19,23 @@
               <h1 class="main-title">Hello! I am Happy Kid</h1>
               <p style="font-size: 18px;">I reward your kid turning bad habits into good ones.</p>
                 <div>
-                  <%=link_to "LET'S GO!", root_path, class: "btn btn-secondary" %>
+                  <%= form_tag games_path, method: :get, class: "search-location mt-md-5" do %>
+                      <div class="row justify-content-center">
+                        <div class="col-lg-10 align-items-end">
+                          <div class="form-group">
+                            <div class="form-field">
+                              <%= text_field_tag :query,
+                                params[:query],
+                                class: "form-control",
+                                placeholder: "Search by area of the problem.",
+                                autocomplete: "off"
+                                %>
+                              <button ><span class="ion-ios-search"><i class="fas fa-search"></i></span></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              <% end %>
                 </div>
             </div>
           </div>

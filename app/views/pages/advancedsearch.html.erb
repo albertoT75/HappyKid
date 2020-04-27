@@ -5,29 +5,34 @@
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Search by name of area of behaviour",
+            placeholder: "Search by name of area",
             autocomplete: "off"
             %>
               <div class="d-flex filters">
               <div class="filter-input-field">
-                <%= label_tag 'sleeping', 'Sleeping' %>
+                <%= label_tag 'name', 'Sleeping' %>
                 <br>
-                <%= select_tag "sleeping", options_for_select([['With Mom&Dad', 'With Mom&Dad'], ['Falling Asleep Alone', 'Falling Asleep Alone'], ['Wondering At Night', 'Wondering At Night']), include_blank: true, placeholder: '', class: "advanced_search" %>
+                <%= select_tag "name", options_for_select([['Sleeping - With mom and dad', 'With mom and dad'], ['Sleeping - Falling asleep alone', 'Falling asleep alone'], ['Sleeping - Wondering at night', 'Wondering at night']), include_blank: true, placeholder: '', class: "advanced_search" %>
               </div>
               <div  class="filter-input-field">
-                <%= label_tag 'potty_training', 'Potty Training' %>
+                <%= label_tag 'name', 'Potty Training' %>
                 <br>
-                <%= select_tag "potty_training", options_for_select([['16:00', '16:00'], ['17:00', '17:00'], ['18:00', '18:00'], ['19:00', '19:00'], ['20:00', '20:00']]), include_blank: true, placeholder: '', class: "advanced_search" %>
+                <%= select_tag "name", options_for_select([['Potty Training', 'Potty Training']]), include_blank: true, placeholder: '', class: "advanced_search" %>
               </div>
               <div  class="filter-input-field">
-                <%= label_tag 'size', 'Size' %>
+                <%= label_tag 'name', 'Eating' %>
                 <br>
-                <%= select_tag "size", options_for_select([['less than 50', 'less than 50'], ['more than 50', 'more than 50']]), include_blank: true, placeholder: '', class: "advanced_search" %>
+                <%= select_tag "name", options_for_select([['Eating - Eating Alone', 'Eating Alone'], ['Eating - Eating At The Table', 'Staying at the table'],]), include_blank: true, placeholder: '', class: "advanced_search" %>
               </div>
               <div  class="filter-input-field">
-                <%= label_tag 'age_structure', 'Age Structure' %>
+                <%= label_tag 'name', 'Dressing Up' %>
                 <br>
-                <%= select_tag "age_structure", options_for_select([['Mixed ages', 'Mixed ages'], ['Old homogenous', 'Old homogenous'], ['Nest group', 'Nest group']]), include_blank: true, placeholder: '', class: "advanced_search" %>
+                <%= select_tag "name", options_for_select([['Dressing Up - Choosing Clothes', 'Choosing Clothes'], ['Dressing Up - Wearing Clothes', 'Wearing Clothes Alone'],]), include_blank: true, placeholder: '', class: "advanced_search" %>
+              </div>
+              <div  class="filter-input-field">
+                <%= label_tag 'name', 'Home work' %>
+                <br>
+                <%= select_tag "name", options_for_select([['Home Work', 'Doing Home Work']]), include_blank: true, placeholder: '', class: "advanced_search" %>
               </div>
             </div>
             <button ><span class="ion-ios-search"><i class="fas fa-search"></i></span></button>
@@ -35,10 +40,6 @@
             <% end %>
         </div>
       </div>
-
-
-
-
 
 
 
