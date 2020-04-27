@@ -4,29 +4,28 @@
 <%# end %>
 
 <div class="card">
-  <% if kindergarden.photo.present? %>
+  <% if game.photo.present? %>
     <div class="card-img" style="background-image: url('<%= cl_image_path kindergarden.photo, height: 300, width: 400, crop: :fill %>')"></div>
   <% else %>
     <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))"></div>
   <%end%>
   <div class="card-description">
-    <span><%= link_to kindergarden.name, kindergarden_path(kindergarden)%></span>
-    <i><%= kindergarden.language %></i>
-    <address><%= kindergarden.address %></address>
+    <span><%= link_to game.name, game_path(game)%></span>
+
     <p><%= kindergarden.description %></p>
     <div>
-      <%=link_to "More details", kindergarden_path(kindergarden.id) %>
-      <% if kindergarden.is_available == true %>
+      <%=link_to "More details", game_path(game.id) %>
+      <% if game.is_available == true %>
         <% if user_signed_in? %>
           <% if current_user.kids.exists? %>
             <% if !@declined_reservations.empty? || @all_reservations.empty? %>
-              <%= link_to "Apply", new_kindergarden_reservation_path(kindergarden) %>
+              <%= link_to "Select", new_game_reservation_path(game) %>
             <% end %>
           <% else %>
             <%= link_to "Add your kid first", new_kid_path %>
           <% end %>
         <% else %>
-          <%=link_to "Apply", new_kindergarden_reservation_path(kindergarden) %>
+          <%=link_to "Select", new_game_reservation_path(game) %>
         <% end %>
       <% end %>
     </div>
