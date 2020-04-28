@@ -1,6 +1,5 @@
 <% if user_signed_in? %>
-  <% @all_reservations = current_user.reservations.where(kindergarden: kindergarden) %>
-  <% @declined_reservations = current_user.reservations.where(kindergarden: kindergarden, status: 'Declined') %>
+
 <% end %>
 
 <div class="card <%= 'card-index' if controller_name == 'games' && action_name == 'index' %>">
@@ -11,7 +10,7 @@
   <%end%>
   <div class="card-description">
     <h2><%=game.name%></h2>
-
+    <i><%= game.description %></i>
 
     <p style="color: rgba(0,0,0,0.6);"><%= truncate(game.description, length: 100, separator: ' ') %></p>
     <div class="d-flex justify-content-between">
