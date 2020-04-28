@@ -4,7 +4,7 @@ class Game < ApplicationRecord
   has_many :rewards
 
   pg_search_scope :search_by_name,
-    against: [ :name, :description ],
+    against: [ :name],
     using: {
       tsearch: { prefix: true, any_word: true }
     }
