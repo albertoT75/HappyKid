@@ -4,7 +4,7 @@
 
 <div class="card <%= 'card-index' if controller_name == 'games' && action_name == 'index' %>">
   <% if game.photo.present? %>
-    <div class="card-img" style="background-image: url('<%= cl_image_path game.photo, height: 300, width: 400, crop: :fill %>')"></div>
+    <div class="card-img" style="background-image: url('<%= image_path game.photo, height: 300, width: 400, crop: :fill %>')"></div>
   <% else %>
     <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))"></div>
   <%end%>
@@ -16,19 +16,9 @@
     <div class="d-flex justify-content-between">
       <%=link_to "More details", game_path(game.id), class: "btn btn-secondary" %>
 
-      <% if game.is_available == true %>
-        <% if user_signed_in? %>
-          <% if current_user.kids.exists? %>
-            <% if !@declined_reservations.empty? || @all_reservations.empty? %>
-              <%= link_to "Select", new_game_reservation_path(kindergarden), class: "btn btn-primary" %>
-            <% end %>
-          <% else %>
-            <%= link_to "Add kid", new_kid_path, class: "btn btn-primary" %>
-          <% end %>
-        <% else %>
-          <%=link_to "Select", new_game_reservation_path(game),  class: "btn btn-primary" %>
-        <% end %>
-      <% end %>
+
+
+
     </div>
   </div>
 </div>
