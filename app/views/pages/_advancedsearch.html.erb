@@ -1,0 +1,32 @@
+<%= form_tag games_path, method: :get, class: "search-location mt-md-5" do %>
+
+      <div class="form-group">
+        <div class="form-field">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search by name of area of behaviour",
+            autocomplete: "off"
+            %>
+            <div class="d-flex filters">
+              <div class="filter-input-field">
+                <%= label_tag 'name', 'Area' %>
+                <br>
+                <%= select_tag "name", options_for_select([['Sleeping', 'Sleeping'], ['Potty Training', 'Potty Training'], ['Eating', 'Eating'], ['Dressing Up', 'Dressing Up'], ['Homework', 'Homework']]), include_blank: true, placeholder: '', class: "advanced_search" %>
+              </div>
+
+            </div>
+            <button ><span class="ion-ios-search"><i class="fas fa-search"></i></span></button>
+
+            <% end %>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
