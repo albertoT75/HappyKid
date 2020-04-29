@@ -1,7 +1,11 @@
 <div class="kita-show-details">
   <div style="position: relative;">
-    <h4><strong>Are there available spots?</strong></h4>
-
+    <h4><strong>Can I add this area?</strong></h4>
+    <% if @game.is_available  %>
+      <strong style="font-size: 19px;">Yes</strong>
+    <% else %>
+      <strong style="font-size: 19px;">No</strong>
+    <% end %>
   </div>
 </div>
 
