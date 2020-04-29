@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_113358) do
+ActiveRecord::Schema.define(version: 2020_04_29_095528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 2020_04_28_113358) do
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "kid_id"
+    t.bigint "game_id"
+    t.index ["game_id"], name: "index_reservations_on_game_id"
+    t.index ["kid_id"], name: "index_reservations_on_kid_id"
+  end
+
   create_table "rewards", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -67,5 +76,7 @@ ActiveRecord::Schema.define(version: 2020_04_28_113358) do
   end
 
   add_foreign_key "kids", "users"
+  add_foreign_key "reservations", "games"
+  add_foreign_key "reservations", "kids"
   add_foreign_key "rewards", "games"
 end

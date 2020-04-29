@@ -1,5 +1,6 @@
 class Kid < ApplicationRecord
   belongs_to :user
+  has_many :reservations
 
 
   validates :first_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
