@@ -20,17 +20,17 @@ class ReservationsController < ApplicationController
     end
   end
 
-  # def update
-  #   @reservation = Reservation.find(params[:id])
-  #   authorize @reservation
-  #   @reservation.update(updated_at: Time.now)
-  #   redirect_to dashboard_path
-  # end
+  def update
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
+    @reservation.update(updated_at: Time.now)
+    redirect_to dashboard_path
+  end
 
   private
 
   # def set_game
-  #   @kgame = Game.find(params[:game_id])
+  #   @game = Game.find(params[:game_id])
   # end
 
   def reservation_params
