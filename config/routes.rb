@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :kids
   resources :games, only: [:index, :show] do
-  # resources :games, only: [:index, :show] do
-  #   resources :rewards only: [:new, :create]
+    resources :reservations, only: [:new, :create]
   end
-
+  # resources :reservations, only: [:update] do
+  #   resources :rewards, only: :create
+  # end
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
 end

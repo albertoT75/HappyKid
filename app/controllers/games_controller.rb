@@ -32,12 +32,12 @@ class GamesController < ApplicationController
 
   def show
     if current_user
-    #   @all_reservations = current_user.reservations.where(kindergarden_id: @kindergarden.id)
-    #   @my_reservation = current_user.reservations.where(kindergarden_id: @kindergarden.id, status: 'Accepted')
-    #   @declined_reservations = current_user.reservations.where(kindergarden_id: @kindergarden.id, status: 'Declined')
-    #   @favourite = current_user.favourites.where(kindergarden_id: @kindergarden.id).first
-    #   @review = Review.new
-    #   @kids_with_no_reservation = current_user.kids.reject { |kid| Reservation.exists?(kid_id: kid.id, kindergarden_id: @kindergarden.id) }
+      @all_reservations = current_user.reservations.where(game_id: @game.id)
+      @my_reservation = current_user.reservations.where(game_id: @game.id, status: 'Selected')
+      # @declined_reservations = current_user.reservations.where(kindergarden_id: @kindergarden.id, status: 'Declined')
+      # @favourite = current_user.favourites.where(kindergarden_id: @kindergarden.id).first
+      # @review = Review.new
+      @kids_with_no_reservation = current_user.kids.reject { |kid| Reservation.exists?(kid_id: kid.id, game_id: @game.id) }
     #   # @reservation = Reservation.where(kid_id: current_user.kids. ?, kindergarden_id: @kindergarden.id)
     end
     @kid = Kid.new

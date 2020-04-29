@@ -39,8 +39,7 @@
             data-mapbox-api-key="<#%= ENV['MAPBOX_API_KEY'] %#>">
           </div> -->
         </div>
-            <hr>
-            <%= render "shared/game_details", game: @game %>
+
             <hr>
             <!-- <#%= render "shared/kita_reviews", kindergarden: @kindergarden %#> -->
             <%= render "shared/carousel", game: @game %>
@@ -51,7 +50,7 @@
           <hr class="kindergardens-line">
         </div>
         <div>
-         <% if user_signed_in? && @game.is_available %>
+         <% if user_signed_in? %>
           <% if current_user.kids.exists? && !@kids_with_no_reservation.empty? %>
           <p style="margin: 20px 0 0;">Please select one of your kids and we'll guide you through the selection process for this area</p>
            <div class="form-pink-bg">
@@ -128,9 +127,7 @@
           <% if @game.reviews.empty? && !@my_reservation.empty? %>
             <h4 style="font-size: 16px"><i class="fas fa-info-circle" style="margin-right: 8px; color: #f57170;"></i>Leave your first comment.</h4>
           <% end %>
-          <% unless @game.is_available %>
-            <h4 style="margin: 30px 0 16px; font-size: 16px"><i class="fas fa-info-circle" style="margin-right: 8px; color: #f57170;"></i>You already selected this area.</h4>
-          <% end %>
+
 
             <% if @my_reservation.present? %>
                 <div class="d-flex" style="margin-top: 30px; color: #f57170;">
