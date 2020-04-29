@@ -21,11 +21,9 @@
             <h1>
               <%= @game.name.upcase %>
               <% if @favourite.nil? %>
-                <div>
-                  <strong><%= link_to '<i class="fas fa-heart"></i>'.html_safe, game_favourites_path(@game),
-                    method: :post,
-                    data: {confirm: 'Adding to favourites' } %></strong>
-                </div>
+
+              <!-- to do favourite link -->
+
               <% end %>
             </h1>
 
