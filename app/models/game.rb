@@ -3,6 +3,7 @@ class Game < ApplicationRecord
 
   # has_many :rewards, through: :reservations
   has_many :reservations
+  has_many :comments, through: :reservations
 
   pg_search_scope :search_by_name,
     against: [ :name],

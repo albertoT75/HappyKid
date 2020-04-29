@@ -104,7 +104,7 @@
             <h4 style="margin: 30px 0 16px; font-size: 18px; color: #f57170;"><i class="fas fa-info-circle" style="margin-right: 8px; color: #f57170;"></i>You need to sign up before you can select.</h4>
           <% end %>
           <ul class="list-group" style="margin: 30px 0 16px;">
-           <% @game.reviews.each do |review| %>
+           <% @game.comments.each do |comment| %>
              <li class="list-group-item d-flex justify-content-between flex-column">
                <div class="review-user">
                  <span class="badge badge-primary badge-pill">
@@ -114,9 +114,9 @@
                     <% counter += 1 %>
                    <% end %>
                  </span>
-                <i><%= review.reservation.kid.user.username if review.reservation.kid.user.username.present? %></i>
+                <i><%= comment.reservation.kid.user.username if comment.reservation.kid.user.username.present? %></i>
                </div>
-               <%= review.content %>
+               <%= comment.content %>
              </li>
             <% end %>
           </ul>
@@ -124,7 +124,7 @@
           <% if @my_reservation.empty? && @game.is_available %>
             <h4 style="font-size: 16px"><i class="fas fa-info-circle" style="margin-right: 8px; color: #f57170;"></i>You will be able to leave a comment once you selected the area.</h4>
           <% end %>
-          <% if @game.reviews.empty? && !@my_reservation.empty? %>
+          <% if @game.comment.empty? && !@my_reservation.empty? %>
             <h4 style="font-size: 16px"><i class="fas fa-info-circle" style="margin-right: 8px; color: #f57170;"></i>Leave your first comment.</h4>
           <% end %>
 
@@ -135,7 +135,7 @@
                   <hr class="kindergardens-line">
                 </div>
                 <div class="form-pink-bg">
-                <%= simple_form_for [@my_reservation.first, @review] do |f| %>
+                <%= simple_form_for [@my_reservation.first, @comment] do |f| %>
                  <%= f.input :rating, collection: 1..5 %>
                  <%= f.input :content %>
                  <%= f.submit class:"btn btn-white w-100"%>
