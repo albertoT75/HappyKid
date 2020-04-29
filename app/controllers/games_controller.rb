@@ -36,7 +36,7 @@ class GamesController < ApplicationController
       @my_reservation = current_user.reservations.where(game_id: @game.id, status: 'Selected')
       @declined_reservations = current_user.reservations.where(game_id: @game.id, status: 'Already Selected')
       # @favourite = current_user.favourites.where(kindergarden_id: @kindergarden.id).first
-      # @review = Review.new
+      @comment = Comment.new
       @kids_with_no_reservation = current_user.kids.reject { |kid| Reservation.exists?(kid_id: kid.id, game_id: @game.id) }
     #   # @reservation = Reservation.where(kid_id: current_user.kids. ?, kindergarden_id: @kindergarden.id)
     end

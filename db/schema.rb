@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_104818) do
+ActiveRecord::Schema.define(version: 2020_04_29_113431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_04_29_104818) do
     t.datetime "updated_at", null: false
     t.bigint "kid_id"
     t.bigint "game_id"
+    t.string "status"
     t.index ["game_id"], name: "index_reservations_on_game_id"
     t.index ["kid_id"], name: "index_reservations_on_kid_id"
   end

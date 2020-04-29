@@ -110,7 +110,7 @@
                  <span class="badge badge-primary badge-pill">
                    <% counter = 0 %>
                    <% 5.times do %>
-                    <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                    <i class="fa <%= comment.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
                     <% counter += 1 %>
                    <% end %>
                  </span>
@@ -121,10 +121,10 @@
             <% end %>
           </ul>
         <% if user_signed_in? %>
-          <% if @my_reservation.empty? && @game.is_available %>
+          <% if @my_reservation.empty? %>
             <h4 style="font-size: 16px"><i class="fas fa-info-circle" style="margin-right: 8px; color: #f57170;"></i>You will be able to leave a comment once you selected the area.</h4>
           <% end %>
-          <% if @game.comment.empty? && !@my_reservation.empty? %>
+          <% if @game.comments.empty? && !@my_reservation.empty? %>
             <h4 style="font-size: 16px"><i class="fas fa-info-circle" style="margin-right: 8px; color: #f57170;"></i>Leave your first comment.</h4>
           <% end %>
 

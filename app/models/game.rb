@@ -1,7 +1,5 @@
 class Game < ApplicationRecord
   include PgSearch::Model
-
-  # has_many :rewards, through: :reservations
   has_many :reservations
   has_many :comments, through: :reservations
 
@@ -11,3 +9,5 @@ class Game < ApplicationRecord
       tsearch: { prefix: true, any_word: true }
     }
 end
+
+
