@@ -8,13 +8,13 @@
   .kid-card {
     padding: 8px 12px;
     margin-right: 30px;
-    border: 1px solid #f57170;
+    border: 1px solid #328ac5;
     font-family: 'Roboto';
     border-radius: 4px;
   }
 
   .kid-card-add {
-    background-color: #f57170;
+    background-color: #328ac5;
     font-weight: 600px;
 
     a {
@@ -41,14 +41,14 @@
 }
 
 .btn-secondary {
-  border: 1px solid #f57170;
+  border: 1px solid #328ac5;
   background-color: white;
-  color: #f57170;
+  color: #328ac5;
   font-size: 12px;
 
   &:hover {
-    background-color: #f57170;
+    background-color: #328ac5;
     color: white;
-    border-color: #f57170;
+    border-color: #328ac5;
   }
 }
