@@ -1,5 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "kita_show";
+@import "misc";
 @import "dashboard";
 
 
@@ -54,7 +56,8 @@ h3 {
 
 .kita-index-flex-left {
   padding: 0 30px 30px;
-  width: 60%;
+  width: 100%;
+
 
   .ion-ios-search {
     display: flex;
@@ -105,7 +108,7 @@ h3 {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
 }
 

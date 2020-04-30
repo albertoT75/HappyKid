@@ -1,10 +1,10 @@
 <div class="container">
   <div class="form-pink-bg form-reservations-new">
     <% if current_user.kids.exists? %>
-     <p>Please select one of your kids and we'll guide you through the selection process for this area</p>
+     <p>Select one of your kid this area will be applied to.</p>
       <%= simple_form_for([@game, @reservation]) do |f| %>
       <%= f.association :kid, collection: current_user.kids, label_method: :first_name %>
-      <%= f.button :submit, class:"btn btn-white w-100" %>
+      <%= f.button :submit, value:"Let's fix this!", class:"btn btn-white w-100" %>
       <% end %>
     <% end %>
     <hr>
