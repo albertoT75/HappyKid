@@ -56,7 +56,7 @@
            <div class="form-pink-bg">
             <%= simple_form_for([@game, @reservation]) do |f| %>
             <%= f.association :kid, collection: @kids_with_no_reservation, label_method: :first_name %>
-            <%= f.button :submit, class:"btn btn-white w-100" %>
+            <%= f.button :submit, value:"Let's fix this!", class:"btn btn-white w-100" %>
           <% end %>
           </div>
           <% elsif @current_user.kids.empty? %>
