@@ -1,6 +1,6 @@
 puts "Destroy previous Areas"
-# Review.destroy_all
-# Reservation.destroy_all
+Comment.destroy_all
+Reservation.destroy_all
 Game.destroy_all
 
 games = Game.create([{name: "Sleeping - With mom and dad", description: "Help your children to find a balanced sleep, by staying in his bed during the night.", photo:"https://unsplash.com/photos/HSy0QXIRafg"},
@@ -24,4 +24,5 @@ games = Game.create([{name: "Sleeping - With mom and dad", description: "Help yo
                       {name: "Washing - Hands", description: "Let's keep the germs away.", photo:"https://unsplash.com/photos/wYOPqmtDD0w"},
                       {name: "Washing - Hair", description: "The soap is not so bad!", photo:"https://unsplash.com/photos/wYOPqmtDD0w"},
                       {name: "QuietTime", description: "Because our neighbours need some peace sometime.", photo:"https://unsplash.com/photos/wYOPqmtDD0w"},
+                      {name: "Tantrum", description: "Throwing a tantrum cannot be the solution.", photo:"https://unsplash.com/photos/wYOPqmtDD0w"},
                       {name: "Homework", description: "Children doing their homework without the help of the parents.", photo:"https://unsplash.com/photos/4E1JOFK55kc"}])
