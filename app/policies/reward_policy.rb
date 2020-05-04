@@ -5,12 +5,19 @@ class RewardPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    true
+  end
+
   def create?
     true
   end
 
-def update?
-    true
+  def edit?
+    record.user == user
   end
 
+  def update?
+    record.user == user
+  end
 end

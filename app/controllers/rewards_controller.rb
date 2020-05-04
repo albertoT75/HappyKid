@@ -1,5 +1,5 @@
 class RewardsController < ApplicationController
-
+  before_action :set_reward, only: [:edit, :update]
 
   def new
     @reward = current_user.rewards.new
@@ -39,9 +39,9 @@ class RewardsController < ApplicationController
     params.require(:reward).permit(:first_prize, :second_prize, :third_prize, :fourth_prize, :fifth_prize)
   end
 
-  # def set_kid
-  #   @kid = Kid.find(params[:id])
-  # end
+  def set_reward
+    @reward = Reward.find(params[:id])
+  end
 
 end
 
