@@ -1,0 +1,36 @@
+<div class="container">
+ <div class="form-pink-bg">
+    <div class="row">
+     <div class="col-sm-12">
+      <%= simple_form_for(@reward) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+         <% if @reward.errors.any? %>
+           <div class="errors-container">
+             <ul>
+               <% @reward.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+               <% end %>
+             </ul>
+           </div>
+          <% end %>
+          <div class="form-inputs">
+           <%= f.input :name %>
+           <%= f.input :first_prize %>
+           <%= f.input :second_prize %>
+           <%= f.input :third_prize %>
+           <%= f.input :fourth_prize %>
+           <%= f.input :fifth_prize %>
+
+          </div>
+           <div class="form-actions">
+             <%= f.submit 'ADD REWARD', class: "btn btn-white w-100 font-weight-bold" %>
+           </div>
+          <% end %>
+        </div>
+     </div>
+  </div>
+ </div>
+
+
+
