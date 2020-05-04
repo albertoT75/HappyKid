@@ -99,7 +99,7 @@
       <% current_user.rewards.each do |reward| %>
         <div class="col-3 kid-card">
           <%= link_to edit_reward_path(reward) do %>
-            <span>Rewards</span>
+            <span><%= reward.name %></span>
           <% end %>
         </div>
       <% end %>

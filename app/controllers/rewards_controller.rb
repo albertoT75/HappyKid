@@ -36,7 +36,7 @@ class RewardsController < ApplicationController
   private
 
   def reward_params
-    params.require(:reward).permit(:first_prize, :second_prize, :third_prize, :fourth_prize, :fifth_prize)
+    params.require(:reward).permit(:name, :first_prize, :second_prize, :third_prize, :fourth_prize, :fifth_prize)
   end
 
   def set_reward
