@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :kids
   resources :games, only: [:index, :show] do
     resources :reservations, only: [:new, :create]
+    resources :rewards, only: [:create, :update]
   end
   resources :reservations, only: [:update] do
     resources :comments, only: :create

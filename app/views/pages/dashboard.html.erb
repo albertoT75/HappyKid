@@ -10,9 +10,10 @@
 
           <th class="table-dashboard" style="padding: 8px;">Child</th>
           <th class="table-dashboard" style="padding: 8px;">Areas</th>
-          <th class="table-dashboard" style="padding: 8px;">Daily Rewards</th>
           <th class="table-dashboard" style="padding: 8px;">Weekly Rewards</th>
           <th class="table-dashboard" style="padding: 8px;">Monthly Rewards</th>
+          <th class="table-dashboard" style="padding: 8px;">Spin the wheel</th>
+
 
         </tr>
       </thead>
@@ -34,7 +35,7 @@
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <% if reservation.status == "Selected" %>
+                    <% if reservation.status == "Achived" %>
                       <i class="accepted"><%= reservation.status %></i>
                     <!-- to do other statuses -->
                     <% end %>
@@ -44,22 +45,19 @@
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <%= I18n.l(reservation.created_at, format: :short, locale: :'en') %>
+                    <% if reservation.status == "Achived" %>
+                      <i class="accepted"><%= reservation.status %></i>
+                    <!-- to do other statuses -->
+                    <% end %>
                   </div>
                 <% end %>
+              </td>
               </td>
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <%= I18n.l(reservation.updated_at, format: :short, locale: :'en') %>
-                  </div>
-                <% end %>
-              </td>
-              <td class="table-dashboard">
-                <% kid.reservations.each do |reservation| %>
-                  <div class="table-item">
-                    <% if reservation.status  == 'Selected' %>
-                      <%= link_to "Leave a comment", game_path(reservation.game), class: "btn btn-secondary" %>
+                    <% if reservation.status  == 'Achived' %>
+                      <%= link_to "Spin the wheel", game_path(reward.game), class: "btn btn-secondary" %>
                     <!-- old resend application -->
                     <% end %>
                   </div>
