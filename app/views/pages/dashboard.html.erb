@@ -10,9 +10,9 @@
 
           <th class="table-dashboard" style="padding: 8px;">Child</th>
           <th class="table-dashboard" style="padding: 8px;">Areas</th>
-          <th class="table-dashboard" style="padding: 8px;">Weekly Rewards</th>
-          <th class="table-dashboard" style="padding: 8px;">Monthly Rewards</th>
-          <th class="table-dashboard" style="padding: 8px;">Spin the wheel</th>
+          <th class="table-dashboard" style="padding: 8px;">Green Stars <i class="fas fa-star fa-2x" style="color:green"></i></th>
+          <th class="table-dashboard" style="padding: 8px;">Yellow Stars <i class="fas fa-star fa-2x" style="color:yellow"></i></th>
+          <th class="table-dashboard" style="padding: 8px;">Red Stars <i class="fas fa-star fa-2x" style="color:red"></i></th>
 
 
         </tr>
@@ -35,34 +35,43 @@
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <% if reservation.status == "Achived" %>
-                      <i class="accepted"><%= reservation.status %></i>
-                    <!-- to do other statuses -->
-                    <% end %>
+                    <%= reservation.green_stars %>
                   </div>
                 <% end %>
               </td>
+
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <% if reservation.status == "Achived" %>
-                      <i class="accepted"><%= reservation.status %></i>
-                    <!-- to do other statuses -->
-                    <% end %>
+                    <%= reservation.yellow_stars %>
                   </div>
                 <% end %>
               </td>
-              </td>
+
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <% if reservation.status  == 'Achived' %>
-                      <%= link_to "Spin the wheel", game_path(reward.game), class: "btn btn-secondary" %>
-                    <!-- old resend application -->
-                    <% end %>
+                    <%= reservation.red_stars %>
                   </div>
                 <% end %>
               </td>
+
+              <!-- <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <% if reservation.green_stars == 3 %>
+                        <% current_user.rewards.each do |reward| %>
+                          <%= link_to edit_reward_path(reward) do %>
+                            <%= reward.name %>
+                          <% end %>
+                        <% end %>
+                    <% end %>
+                  <% end %>
+              </td> -->
+                        <!-- link_to "Spin the Wheel!", "pages/wheel" -->
+
+
+
             </tr>
           <% end %>
         <% end %>
