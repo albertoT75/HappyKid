@@ -13,7 +13,6 @@
           <th class="table-dashboard" style="padding: 8px;">Green Stars <i class="fas fa-star fa-2x" style="color:green"></i></th>
           <th class="table-dashboard" style="padding: 8px;">Yellow Stars <i class="fas fa-star fa-2x" style="color:yellow"></i></th>
           <th class="table-dashboard" style="padding: 8px;">Red Stars <i class="fas fa-star fa-2x" style="color:red"></i></th>
-          <th class="table-dashboard" style="padding: 8px;">Spin The Wheel</th>
 
 
         </tr>
@@ -61,10 +60,15 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
                     <% if reservation.green_stars == 3 %>
-                        <%= link_to "Spin the Wheel!", "pages/wheel" %>
+                        <% current_user.rewards.each do |reward| %>
+                          <%= link_to edit_reward_path(reward) do %>
+                            <%= reward.name %>
+                          <% end %>
+                        <% end %>
                     <% end %>
                   <% end %>
               </td> -->
+                        <!-- link_to "Spin the Wheel!", "pages/wheel" -->
 
 
 
