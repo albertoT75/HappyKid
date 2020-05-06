@@ -4,11 +4,13 @@
 
         <div id="wheel">
             <div id="inner-wheel">
-                <div class="sec"><span class="fa text"><%= reward.first_prize %></span></div>
-                <div class="sec"><span class="fa text"><%= reward.second_prize %></span></div>
-                <div class="sec"><span class="fa text"><%= reward.third_prize %></span></div>
-                <div class="sec"><span class="fa text"><%= reward.fourth_prize %></span></div>
-                <div class="sec"><span class="fa text"><%= reward.fifth_prize %></span></div>
+                <% current_user.rewards.each do |reward| %>
+                  <div class="sec"><span class="fa text"><%= reward.first_prize %></span></div>
+                  <div class="sec"><span class="fa text"><%= reward.second_prize %></span></div>
+                  <div class="sec"><span class="fa text"><%= reward.third_prize %></span></div>
+                  <div class="sec"><span class="fa text"><%= reward.fourth_prize %></span></div>
+                  <div class="sec"><span class="fa text"><%= reward.fifth_prize %></span></div>
+                <% end %>
                 <div class="sec"><span class="fa fa-gift"></span></div>
             </div>
 
