@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :kids
   resources :rewards
   resources :games, only: [:index, :show] do
-    resources :reservations, only: [:new, :create]
+    resources :reservations, only: [:new, :create] do
+      patch :greenstarscounter
+      put :greenstarscounter
+    end
 
   end
   resources :reservations, only: [:update] do

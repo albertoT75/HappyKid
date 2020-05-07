@@ -27,18 +27,22 @@ class ReservationsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def stars
-    stars_count = 0
-
+  def greenstarscounter
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
+    if @reservation.greenstarscounter?
+      @reservation.green_stars += 1
+      @reservation.green_stars.save
+    end
+    redirect_to dashboard_path
   end
 
   private
 
-  # def set_game
-  #   @game = Game.find(params[:game_id])
-  # end
+
 
   def reservation_params
-    params.require(:reservation).permit(:kid_id, :green_stars, :yellow_stars, :red_stars)
+    params.require(:reservation).permit(:kid_id, :green_stars, :yellow_stars, :red_stars,
+                   :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :greenstarscounter)
   end
 end
