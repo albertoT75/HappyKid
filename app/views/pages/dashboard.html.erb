@@ -27,8 +27,8 @@
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <%= reservation.game.name %>
-                    <%= link_to 'Week Board', 'pages#week' %>
+                    <%= reservation.game.name %> <i class="fas fa-arrow-circle-right style="color:#c8c8c8"></i>
+                    <%= link_to 'Week Board', 'week_path' %>
                   </div>
                 <% end %>
               </td>
