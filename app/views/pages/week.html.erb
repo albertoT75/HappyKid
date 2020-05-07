@@ -54,18 +54,7 @@
                 <% end %>
               </td>
 
-              <!-- <td class="table-dashboard">
-                <% kid.reservations.each do |reservation| %>
-                  <div class="table-item">
-                    <% if reservation.green_stars == 3 %>
-                        <% current_user.rewards.each do |reward| %>
-                          <%= link_to edit_reward_path(reward) do %>
-                            <%= reward.name %>
-                          <% end %>
-                        <% end %>
-                    <% end %>
-                  <% end %>
-              </td> -->
+
                         <!-- link_to "Spin the Wheel!", "pages/wheel" -->
 
 
@@ -77,51 +66,10 @@
     </table>
   </div>
 
-  <div class="container dashboard-section" id="my-kids">
-    <div class="section-title" style=" margin-top: 15px; color: #f57170;">
-      <h4>My Kids</h4>
-    </div>
-    <div class="row kid-сards">
-      <% current_user.kids.each do |kid| %>
-        <div class="col-3 kid-card">
-          <%= link_to edit_kid_path(kid) do %>
-            <span><%= kid.first_name %></span>
-          <% end %>
-        </div>
-      <% end %>
 
-      <div class="col-3 kid-card kid-card-add">
-        <%= link_to new_kid_path(current_user) do %>
-          <span>Add kid <i class="far fa-plus-square"></i></span>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="container dashboard-section" id="my-kids">
-    <div class="section-title" style=" margin-top: 15px; color: #f57170;">
-      <h4>My Rewards</h4>
-    </div>
-    <div class="row kid-сards">
-      <% current_user.rewards.each do |reward| %>
-        <div class="col-3 kid-card">
-          <%= link_to edit_reward_path(reward) do %>
-            <span><%= reward.name %></span>
-          <% end %>
-        </div>
-      <% end %>
-
-      <div class="col-3 kid-card kid-card-add">
-        <%= link_to new_reward_path(current_user) do %>
-          <span>Add reward <i class="far fa-plus-square"></i></span>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  </div>
 </div>
 <%= render "shared/footer", game: @game %>
+
+
+
+

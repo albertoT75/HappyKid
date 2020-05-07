@@ -10,9 +10,16 @@
 
           <th class="table-dashboard" style="padding: 8px;">Child</th>
           <th class="table-dashboard" style="padding: 8px;">Areas</th>
-          <th class="table-dashboard" style="padding: 8px;">Green Stars <i class="fas fa-star fa-2x" style="color:green"></i></th>
-          <th class="table-dashboard" style="padding: 8px;">Yellow Stars <i class="fas fa-star fa-2x" style="color:yellow"></i></th>
-          <th class="table-dashboard" style="padding: 8px;">Red Stars <i class="fas fa-star fa-2x" style="color:red"></i></th>
+          <th class="table-dashboard" style="padding: 8px;">Monday</th>
+          <th class="table-dashboard" style="padding: 8px;">Tuesday</th>
+          <th class="table-dashboard" style="padding: 8px;">Wednesday</th>
+          <th class="table-dashboard" style="padding: 8px;">Thursday</th>
+          <th class="table-dashboard" style="padding: 8px;">Friday</th>
+          <th class="table-dashboard" style="padding: 8px;">Saturday</th>
+          <th class="table-dashboard" style="padding: 8px;">Sunday</th>
+          <th class="table-dashboard" style="padding: 8px; color:black">Stars Count</th>
+
+
 
 
         </tr>
@@ -27,8 +34,65 @@
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <%= reservation.game.name %> <i class="fas fa-arrow-circle-right style="color:#c8c8c8"></i>
-                    <%= link_to 'Week Board', 'week_path' %>
+                    <%= reservation.game.name %>
+                  </div>
+                <% end %>
+              </td>
+
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.monday %>
+                  </div>
+                <% end %>
+              </td>
+
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.tuesday %>
+                  </div>
+                <% end %>
+              </td>
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.wednesday %>
+                  </div>
+                <% end %>
+              </td>
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.thursday %>
+                  </div>
+                <% end %>
+              </td>
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.friday %>
+                  </div>
+                <% end %>
+              </td>
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.saturday %>
+                  </div>
+                <% end %>
+              </td>
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.sunday %>
                   </div>
                 <% end %>
               </td>
@@ -37,21 +101,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
                     <%= reservation.green_stars %>
-                  </div>
-                <% end %>
-              </td>
-
-              <td class="table-dashboard">
-                <% kid.reservations.each do |reservation| %>
-                  <div class="table-item">
                     <%= reservation.yellow_stars %>
-                  </div>
-                <% end %>
-              </td>
-
-              <td class="table-dashboard">
-                <% kid.reservations.each do |reservation| %>
-                  <div class="table-item">
                     <%= reservation.red_stars %>
                   </div>
                 <% end %>
