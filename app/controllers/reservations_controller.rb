@@ -27,6 +27,11 @@ class ReservationsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def stars
+    stars_count = 0
+
+  end
+
   private
 
   # def set_game

@@ -17,7 +17,7 @@
           <th class="table-dashboard" style="padding: 8px;">Fri</th>
           <th class="table-dashboard" style="padding: 8px;">Sat</th>
           <th class="table-dashboard" style="padding: 8px;">Sun</th>
-          <th class="table-dashboard" style="padding: 8px; color:black">Green Stars<i class="fas fa-star fa-lg" style="color:green;"></i></th>
+          <th class="table-dashboard" style="padding: 8px; color:black">Green Stars<i class="fas fa-star fa-lg" style="color:#57a773;"></i></th>
 
 
 
@@ -44,7 +44,10 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
                     <%= reservation.monday %>
-                    <i class="far fa-star"></i>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+
                  </div>
                 <% end %>
               </td>
@@ -54,7 +57,9 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
                     <%= reservation.tuesday %>
-                    <i class="far fa-star"></i>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
                   </div>
                 <% end %>
               </td>
@@ -63,7 +68,9 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
                     <%= reservation.wednesday %>
-                    <i class="far fa-star"></i>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
                   </div>
                 <% end %>
               </td>
@@ -72,7 +79,9 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
                     <%= reservation.thursday %>
-                    <i class="far fa-star"></i>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
                    </div>
                 <% end %>
               </td>
@@ -81,7 +90,9 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
                     <%= reservation.friday %>
-                    <i class="far fa-star"></i>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
                   </div>
                 <% end %>
               </td>
@@ -90,7 +101,9 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
                     <%= reservation.saturday %>
-                    <i class="far fa-star"></i>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
                    </div>
                 <% end %>
               </td>
@@ -99,7 +112,9 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
                     <%= reservation.sunday %>
-                    <i class="far fa-star"></i>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
                    </div>
                 <% end %>
               </td>
