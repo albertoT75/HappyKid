@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
   get 'dashboard', to: 'pages#dashboard', as: :dashboard
+  get 'week', to: 'pages#week', as: :week
 end

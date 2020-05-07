@@ -9,4 +9,8 @@ class PagesController < ApplicationController
     @kids = current_user.kids
   end
 
+  def week
+    @kids = current_user.kids
+  end
+
 end

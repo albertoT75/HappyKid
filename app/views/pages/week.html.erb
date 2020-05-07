@@ -2,17 +2,21 @@
 
   <div class="container dashboard-section" id="all-kindergardens" style="margin-bottom: 30px;">
     <div class="section-title" style=" color: #f57170;">
-      <h4>My Games</h4>
+      <h4>My Week</h4>
     </div>
     <table style="width: 100%;">
       <thead>
         <tr>
 
-          <th class="table-dashboard" style="padding: 8px;">Child</th>
-          <th class="table-dashboard" style="padding: 8px;">Areas</th>
-          <th class="table-dashboard" style="padding: 8px;">Green Stars <i class="fas fa-star fa-2x" style="color:green"></i></th>
-          <th class="table-dashboard" style="padding: 8px;">Yellow Stars <i class="fas fa-star fa-2x" style="color:yellow"></i></th>
-          <th class="table-dashboard" style="padding: 8px;">Red Stars <i class="fas fa-star fa-2x" style="color:red"></i></th>
+          <th class="table-dashboard" style="padding: 8px;">Area</th>
+          <th class="table-dashboard" style="padding: 8px;">Monday</th>
+          <th class="table-dashboard" style="padding: 8px;">Tuesday</th>
+          <th class="table-dashboard" style="padding: 8px;">Wednesday</th>
+          <th class="table-dashboard" style="padding: 8px;">Thursday</th>
+          <th class="table-dashboard" style="padding: 8px;">Friday</th>
+          <th class="table-dashboard" style="padding: 8px;">Saturday</th>
+          <th class="table-dashboard" style="padding: 8px;">Sunday</th>
+
 
 
         </tr>
@@ -22,16 +26,9 @@
           <% if kid.reservations.exists? %>
             <tr>
               <td class="table-dashboard">
-                <%= kid.first_name  %>
+                <%= reservation.game.name  %>
               </td>
-              <td class="table-dashboard">
-                <% kid.reservations.each do |reservation| %>
-                  <div class="table-item">
-                    <%= reservation.game.name %>
-                    <%= link_to 'Week Board', 'pages#week' %>
-                  </div>
-                <% end %>
-              </td>
+
 
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
