@@ -44,7 +44,7 @@
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
                     <%= reservation.monday %>
-                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, game_reservation_greenstarscounter_path(@reservation), method: :put, data: { confirm: 'Want to add a green star to this area?' }%>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path%>
                     <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
                     <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
 
@@ -122,7 +122,13 @@
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <%= reservation.green_stars %>
+                    You have
+                    <% if reservation.green_stars? %>
+                        <strong> <%= reservation.green_stars %> </strong>
+                    <% else %>
+                      0
+                    <% end %>
+                    Green Stars
                   </div>
                 <% end %>
               </td>
