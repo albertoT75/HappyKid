@@ -1,0 +1,75 @@
+<div class="container">
+
+  <div class="container dashboard-section" id="all-kindergardens" style="margin-bottom: 30px;">
+    <div class="section-title" style=" color: #f57170;">
+      <h4>My Week</h4>
+    </div>
+    <table style="width: 100%;">
+      <thead>
+        <tr>
+
+          <th class="table-dashboard" style="padding: 8px;">Area</th>
+          <th class="table-dashboard" style="padding: 8px;">Monday</th>
+          <th class="table-dashboard" style="padding: 8px;">Tuesday</th>
+          <th class="table-dashboard" style="padding: 8px;">Wednesday</th>
+          <th class="table-dashboard" style="padding: 8px;">Thursday</th>
+          <th class="table-dashboard" style="padding: 8px;">Friday</th>
+          <th class="table-dashboard" style="padding: 8px;">Saturday</th>
+          <th class="table-dashboard" style="padding: 8px;">Sunday</th>
+
+
+
+        </tr>
+      </thead>
+      <tbody class="dashboard-table">
+        <% @kids.each do |kid| %>
+          <% if kid.reservations.exists? %>
+            <tr>
+              <td class="table-dashboard">
+                <%= reservation.game.name  %>
+              </td>
+
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.green_stars %>
+                  </div>
+                <% end %>
+              </td>
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.yellow_stars %>
+                  </div>
+                <% end %>
+              </td>
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.red_stars %>
+                  </div>
+                <% end %>
+              </td>
+
+
+                        <!-- link_to "Spin the Wheel!", "pages/wheel" -->
+
+
+
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
+<%= render "shared/footer", game: @game %>
+
+
+
+

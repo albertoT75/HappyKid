@@ -10,9 +10,16 @@
 
           <th class="table-dashboard" style="padding: 8px;">Child</th>
           <th class="table-dashboard" style="padding: 8px;">Areas</th>
-          <th class="table-dashboard" style="padding: 8px;">Green Stars <i class="fas fa-star fa-2x" style="color:green"></i></th>
-          <th class="table-dashboard" style="padding: 8px;">Yellow Stars <i class="fas fa-star fa-2x" style="color:yellow"></i></th>
-          <th class="table-dashboard" style="padding: 8px;">Red Stars <i class="fas fa-star fa-2x" style="color:red"></i></th>
+          <th class="table-dashboard" style="padding: 8px;">Mon</th>
+          <th class="table-dashboard" style="padding: 8px;">Tue</th>
+          <th class="table-dashboard" style="padding: 8px;">Wed</th>
+          <th class="table-dashboard" style="padding: 8px;">Thu</th>
+          <th class="table-dashboard" style="padding: 8px;">Fri</th>
+          <th class="table-dashboard" style="padding: 8px;">Sat</th>
+          <th class="table-dashboard" style="padding: 8px;">Sun</th>
+          <th class="table-dashboard" style="padding: 8px; color:black">Green Stars <i class="fas fa-star fa-lg" style="color:#57a773;"></i></th>
+
+
 
 
         </tr>
@@ -27,7 +34,32 @@
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <%= link_to reservation.game.name, game_path(reservation.game) %>
+                    <%= reservation.game.name %>
+                  </div>
+                <% end %>
+              </td>
+
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.monday %>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path%>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+
+                 </div>
+                <% end %>
+              </td>
+
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.tuesday %>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
                   </div>
                 <% end %>
               </td>
@@ -35,7 +67,10 @@
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <%= reservation.green_stars %>
+                    <%= reservation.wednesday %>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
                   </div>
                 <% end %>
               </td>
@@ -43,7 +78,21 @@
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <%= reservation.yellow_stars %>
+                    <%= reservation.thursday %>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                   </div>
+                <% end %>
+              </td>
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.friday %>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
                   </div>
                 <% end %>
               </td>
@@ -51,10 +100,39 @@
               <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
                   <div class="table-item">
-                    <%= reservation.red_stars %>
+                    <%= reservation.saturday %>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                   </div>
+                <% end %>
+              </td>
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    <%= reservation.sunday %>
+                    <%= link_to ('<i class="far fa-star" style="color:lightgreen;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:yellow;"></i>').html_safe, root_path %>
+                    <%= link_to ('<i class="far fa-star" style="color:#f57170;"></i>').html_safe, root_path %>
+                   </div>
+                <% end %>
+              </td>
+
+              <td class="table-dashboard">
+                <% kid.reservations.each do |reservation| %>
+                  <div class="table-item">
+                    You have
+                    <% if reservation.green_stars? %>
+                        <strong> <%= reservation.green_stars %> </strong>
+                    <% else %>
+                      0
+                    <% end %>
+                    Green Stars
                   </div>
                 <% end %>
               </td>
+
 
               <!-- <td class="table-dashboard">
                 <% kid.reservations.each do |reservation| %>
